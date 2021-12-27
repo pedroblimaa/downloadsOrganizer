@@ -10,6 +10,5 @@ foldersName = {
     "media": media,
     "compressed": compressed,
     "installer": installer,
-    "folders": folders,
     "other": other,
 }
