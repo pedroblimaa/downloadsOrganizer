@@ -13,16 +13,18 @@ def moveFiles(files, path):
     for file in files:
         for folder in c.folders:
             if file.endswith(c.foldersName[folder]):
-                filePath = path + "\\" + folder + "\\" + file
-                if os.path.exists(filePath):
-                    os.remove(filePath)
-                os.rename(
-                    path + "\\" + file,
-                    path + "\\" + folder + "\\" + file,
-                )
+                moveFile(path, folder, file)
         if os.path.isdir(path + "\\" + file) and (not file in c.folders):
-            print("Folder: " + file)
-            os.rename(
-                path + "\\" + file,
-                path + "\\other\\" + file,
-            )
+            moveFile(path, "other", file)
+    print("Done!")
+    input("Press enter to exit...")
+
+
+def moveFile(path, folder, file):
+    filePath = path + "\\" + folder + "\\" + file
+    if os.path.exists(filePath) and os.path.isfile(filePath):
+        os.remove(filePath)
+    os.rename(
+        path + "\\" + file,
+        path + "\\" + folder + "\\" + file,
+    )
