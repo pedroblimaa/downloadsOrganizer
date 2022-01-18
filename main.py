@@ -3,7 +3,6 @@ from os.path import expanduser
 import os
 
 
-
 def main():
     home = expanduser("~")
     path = home + "\\Downloads"
