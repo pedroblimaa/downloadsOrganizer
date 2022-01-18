@@ -1,9 +1,13 @@
 import filesManager as fm
+from os.path import expanduser
 import os
 
 
+
 def main():
-    path = "C:\\Users\\Pedro\\Downloads"
+    home = expanduser("~")
+    path = home + "\\Downloads"
+
     files = os.listdir(path)
     fm.createFolders(files, path)
     fm.moveFiles(files, path)
