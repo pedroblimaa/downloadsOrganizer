@@ -11,10 +11,12 @@ def createFolders(files, path):
 def moveFiles(files, path):
     print("Moving files...")
     for file in files:
+        hasFolder = False
         for folder in c.folders:
             if file.endswith(c.foldersName[folder]):
                 moveFile(path, folder, file)
-        if os.path.isdir(path + "\\" + file) and (not file in c.folders):
+                hasFolder = True
+        if (os.path.isdir(path + "\\" + file) or  not hasFolder) and (not file in c.folders):
             moveFile(path, "other", file)
     print("Done!")
     input("Press enter to exit...")
