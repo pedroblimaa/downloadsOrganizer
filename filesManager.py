@@ -16,7 +16,7 @@ def moveFiles(files, path):
             if file.endswith(c.foldersName[folder]):
                 moveFile(path, folder, file)
                 hasFolder = True
-        if (os.path.isdir(path + "\\" + file) or  not hasFolder) and (not file in c.folders):
+        if (os.path.isdir(path + "\\" + file) or not hasFolder) and (not(file in c.folders)):
             moveFile(path, "other", file)
     print("Done!")
     input("Press enter to exit...")
