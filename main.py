@@ -4,13 +4,17 @@ import os
 
 
 def main():
+    print("Moving files...")
+
     home = expanduser("~")
     path = home + "\\Downloads"
 
-    files = os.listdir(path)
-    fm.createFolders(files, path)
-    fm.moveFiles(files, path)
+    fileNames = os.listdir(path)
+    fm.createFolders(fileNames, path)
+    fm.organize(fileNames, path)
 
+    print("Done!")
+    input("Press enter to exit...")
 
 if __name__ == "__main__":
     main()
