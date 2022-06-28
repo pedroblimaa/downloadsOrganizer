@@ -31,7 +31,6 @@ def moveToFolder(path, folder, file):
     handleFileRename(path, folder, file, file, duplicatedFileNumber)
 
 
-
 def handleFileRename(path, folder, file, newName, duplicatedFileNumber):
     duplicatedFileNumber += 1
 
@@ -41,7 +40,14 @@ def handleFileRename(path, folder, file, newName, duplicatedFileNumber):
             path + "\\" + folder + "\\" + newName,
         )
     except FileExistsError:
-        handleFileRename(path, folder, file, renameFile(file, duplicatedFileNumber), duplicatedFileNumber)
+        handleFileRename(
+            path,
+            folder,
+            file,
+            renameFile(file, duplicatedFileNumber),
+            duplicatedFileNumber
+        )
+
 
 def renameFile(fileName, duplicatedFileNumber):
     fileNameList = fileName.rsplit('.', 1)
