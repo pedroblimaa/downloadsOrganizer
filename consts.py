@@ -3,9 +3,12 @@ media = (".mp4", ".avi", ".mp3", ".mkv", ".flv", ".wmv", ".mov", ".mpg", ".mpeg"
 compressed = (".zip", ".rar", ".7z")
 installer = (".exe", ".msi")
 other = ()
-folders = ("documents", "media", "compressed", "installer", "other")
+folders = ("Documents", "Media", "Compressed", "Installer", "Other")
+foldersPort = ("Documentos", "Media", "Comprimidos", "Instaladores", "Outros")
 
-foldersName = {
+foldersLanguages = [folders, foldersPort]
+
+foldersExtensions = {
     "documents": documents,
     "media": media,
     "compressed": compressed,
