@@ -1,10 +1,9 @@
 const { app, BrowserWindow } = require('electron')
+const path = require('path')
 
 const createWindow = () => {
   const win = getBrowserWindow()
-  win.loadFile('index.html')
-
-  win.webContents.openDevTools()
+  win.loadFile('src/index.html')
 
   win.on('closed', () => {
     mainWindow = null
@@ -15,13 +14,12 @@ const getBrowserWindow = () => {
   return new BrowserWindow({
     width: 1200,
     height: 440,
-
+    frame: false,
     webPreferences: {
-      // --- !! IMPORTANT !! ---
-      // Disable 'contextIsolation' to allow 'nodeIntegration'
-      // 'contextIsolation' defaults to "true" as from Electron v12
       contextIsolation: false,
       nodeIntegration: true,
+      devTools: true,
+      preload: path.join(__dirname, 'src/js/preload.js'),
     },
   })
 }

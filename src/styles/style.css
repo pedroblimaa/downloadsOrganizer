@@ -1,10 +1,12 @@
-/* Change font in entire application */
+/* TODO - DOWNLOAD THE FONT AND IMPORT IT  */
 @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
 
 * {
   font-family: 'Lato', sans-serif;
   background-color: rgb(31, 31, 31);
   letter-spacing: 0.05em;
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -57,6 +59,7 @@
   font-weight: bold;
   color: rgb(48, 154, 196);
   margin-bottom: 25px;
+  font-weight: 400;
 }
 
 .description {

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/bar.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="drag bar">
+        <div class="bar-menu">
+            <div class="bar-icon">
+                <div class="minimize"></div>
+            </div>
+            <div class="bar-icon">
+                <div class="maximize"></div>
+            </div>
+            <div class="bar-icon">
+                <div class="close">
+                    <div class="close-left"></div>
+                    <div class="close-right"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="container">
+        <h1 class="title">Downloads Organizer</h1>
+        <div class="btn-cotnainer">
+            <button id="organize-btn" class="btn">Organize</button>
+            <button id="undo-btn" class="btn">Undo Organize</button>
+        </div>
+    </div>
+    <script>
+        require('./js/renderer.js')
+        require('./js/script.js')
+    </script>
+</body>
+
+</html>
