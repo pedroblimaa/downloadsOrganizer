@@ -1,0 +1,19 @@
+{
+  "name": "downloads-organizer",
+  "version": "1.0.0",
+  "description": "Organize downloads folder",
+  "main": "main.js",
+  "author": "Pedro Bonfilio",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^19.0.9"
+  },
+  "scripts": {
+    "start": "electron .",
+    "watch": "nodemon --exec electron ."
+  },
+  "dependencies": {
+    "nodemon": "^2.0.19",
+    "python-shell": "^3.0.1"
+  }
+}
