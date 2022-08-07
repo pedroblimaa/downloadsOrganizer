@@ -1,9 +1,26 @@
-const { app, BrowserWindow } = require('electron')
-const path = require('path')
+const { app, BrowserWindow, ipcMain } = require('electron')
 
 const createWindow = () => {
   const win = getBrowserWindow()
   win.loadFile('src/index.html')
+
+  win.openDevTools()
+
+  ipcMain.on('close', () => {
+    win.close()
+  })
+
+  ipcMain.on('minimize', () => {
+    win.minimize()
+  }),
+
+  ipcMain.on('maximize', () => {
+    if (win.isMaximized()) {
+      win.unmaximize()
+    } else {
+      win.maximize()
+    }
+  }),
 
   win.on('closed', () => {
     mainWindow = null
@@ -12,14 +29,16 @@ const createWindow = () => {
 
 const getBrowserWindow = () => {
   return new BrowserWindow({
-    width: 1200,
-    height: 440,
+    // width: 500,
+    // height: 210,
+    width: 1000,
+    height: 800,
     frame: false,
     webPreferences: {
       contextIsolation: false,
       nodeIntegration: true,
       devTools: true,
-      preload: path.join(__dirname, 'src/js/preload.js'),
+      enableRemoteModule: true,
     },
   })
 }

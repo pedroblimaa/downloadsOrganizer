@@ -12,14 +12,14 @@
 
 <body>
     <div class="drag bar">
-        <div class="bar-menu">
-            <div class="bar-icon">
+        <div class="no-drag bar-menu">
+            <div id="min-btn" class="bar-icon">
                 <div class="minimize"></div>
             </div>
-            <div class="bar-icon">
+            <div id="max-btn" class="bar-icon">
                 <div class="maximize"></div>
             </div>
-            <div class="bar-icon">
+            <div id="close-btn" class="bar-icon">
                 <div class="close">
                     <div class="close-left"></div>
                     <div class="close-right"></div>
@@ -36,7 +36,7 @@
         </div>
     </div>
     <script>
-        require('./js/renderer.js')
+        require('./js/titleBar.js');
         require('./js/script.js')
     </script>
 </body>
