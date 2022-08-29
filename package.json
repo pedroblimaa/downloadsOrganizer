@@ -1,21 +1,36 @@
 {
   "name": "downloads-organizer",
-  "version": "1.0.0",
+  "productName": "Downloads Organizer",
+  "version": "0.1.0",
   "description": "Organize downloads folder",
   "main": "main.js",
   "author": "Pedro Bonfilio",
   "license": "MIT",
   "devDependencies": {
-    "electron": "^19.0.9"
+    "electron": "^19.0.9",
+    "electron-builder": "^23.3.3"
   },
   "scripts": {
     "start": "electron .",
-    "watch": "nodemon --exec electron ."
+    "watch": "nodemon --exec electron .",
+    "dist": "electron-builder"
   },
   "dependencies": {
     "@electron/remote": "^2.0.8",
     "custom-electron-titlebar": "^4.1.0",
     "nodemon": "^2.0.19",
     "python-shell": "^3.0.1"
+  },
+  "build": {
+    "appId": "com.downloads-organizer.app",
+    "productName": "Downloads Organizer",
+    "target": "NSIS",
+    "nsis": {
+      "oneClick": true,
+      "installerLanguages": "en_US",
+      "displayLanguageSelector": true,
+      "multiLanguageInstaller": true,
+      "unicode": true
+    }
   }
 }

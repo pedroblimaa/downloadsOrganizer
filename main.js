@@ -4,8 +4,6 @@ const createWindow = () => {
   const win = getBrowserWindow()
   win.loadFile('src/index.html')
 
-  win.openDevTools()
-
   ipcMain.on('close', () => {
     win.close()
   })
@@ -29,10 +27,8 @@ const createWindow = () => {
 
 const getBrowserWindow = () => {
   return new BrowserWindow({
-    // width: 500,
-    // height: 210,
-    width: 1000,
-    height: 800,
+    width: 500,
+    height: 210,
     frame: false,
     webPreferences: {
       contextIsolation: false,
