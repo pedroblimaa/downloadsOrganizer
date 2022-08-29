@@ -47,6 +47,8 @@ def handleFileRename(path, folder, file, newName, duplicatedFileNumber):
             renameFile(file, duplicatedFileNumber),
             duplicatedFileNumber
         )
+    except PermissionError:
+        print("Permission error: " + file)
 
 
 def renameFile(fileName, duplicatedFileNumber):
