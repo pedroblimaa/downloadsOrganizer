@@ -1,22 +1,30 @@
 const { PythonShell } = require('python-shell')
 
 document.getElementById('organize-btn').addEventListener('click', function () {
-  PythonShell.run('./script/organize.py', null, function (err) {
-    console.log('Running')
-    if (err) {
-      alert('Error: ' + err)
-      throw err
-    }
-    alert('Organized susccessfully!')
-  })
+  getLanguage()
+  runPythonScript('organize')
 })
 
 document.getElementById('undo-btn').addEventListener('click', function () {
-  PythonShell.run('./script/undo.py', null, function (err) {
-    if (err) {
-      alert('Error: ' + err)
-      throw err
-    }
-    alert('Undo susccessfully!')
-  })
+  getLanguage()
+  runPythonScript('undo')
 })
+
+function runPythonScript(scriptName) {
+  PythonShell.run(`./script/${scriptName}.py`, null, function (err) {
+    console.log('Running')
+    handleScriptReturn(scriptName, err)
+  })
+}
+
+function handleScriptReturn(scriptName, err) {
+  if (err) {
+    alert('Error: ' + err)
+    throw err
+  }
+  alert(scriptName + ' susccessfully!')
+}
+
+function getLanguage() {
+  // TODO - Get Value from the active buttons
+}
