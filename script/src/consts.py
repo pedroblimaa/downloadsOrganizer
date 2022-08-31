@@ -3,7 +3,7 @@ media = (".mp4", ".avi", ".mp3", ".mkv", ".flv", ".wmv", ".mov", ".mpg", ".mpeg"
 compressed = (".zip", ".rar", ".7z")
 installer = (".exe", ".msi")
 other = ()
-folders = ("documents", "media", "compressed", "installer", "other")
+languages = ("pt-br", "en-us")
 
 foldersName = {
     "documents": documents,
@@ -12,3 +12,18 @@ foldersName = {
     "installer": installer,
     "other": other,
 }
+
+foldersLanguages = (
+    {
+        "language": "original",
+        "names": ("documents", "media", "compressed", "installer", "other")
+    },
+    {
+        "language": 'pt-br',
+        "names": ("Documentos", "Media", "Zips", "Instaladores", "Outros")
+    },
+    {
+        "language": 'en-us',
+        "names": ("Documents", "Media", "Zips", "Installers", "Other")
+    },
+)
