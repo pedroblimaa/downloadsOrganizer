@@ -1,6 +1,6 @@
-import consts as c
 from os.path import expanduser
 import os
+import src.consts as c
 
 def verifyOrganizationLanguage(fileNames):
     language = ''
@@ -11,7 +11,7 @@ def verifyOrganizationLanguage(fileNames):
             language = folder['language']
             break
 
-    print(language)
+    return language
 
 
 def verifyFolderLanguageMatch(folder, fileNames):
