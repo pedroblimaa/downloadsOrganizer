@@ -28,15 +28,29 @@
 
         </div>
     </div>
+
     <div class="container">
         <h1 class="title">Downloads Organizer</h1>
-        <div class="btn-cotnainer">
-            <button id="organize-btn" class="btn">Organize</button>
-            <button id="undo-btn" class="btn">Undo Organize</button>
+
+        <div class="content">
+            <div class="language-container">
+                <h3 class="text">Language</h3>
+                <div class="btns">
+                    <button id="pt-br" class="active language-btn btn">PT</button>
+                    <button id="en-us" class="language-btn btn">EN</button>
+                </div>
+            </div>
+
+            <div class="trigger-action-container">
+                <button id="organize-btn" class="btn">Organize</button>
+                <button id="undo-btn" class="btn">Undo Organize</button>
+            </div>
         </div>
+    </div>
     </div>
     <script>
         require('./js/titleBar.js');
+        require('./js/languageBtn.js')
         require('./js/script.js')
     </script>
 </body>

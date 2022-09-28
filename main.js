@@ -2,6 +2,8 @@ const { app, BrowserWindow, ipcMain } = require('electron')
 
 const createWindow = () => {
   const win = getBrowserWindow()
+  // Uncomment the below line to open the DevTools.
+  // win.webContents.openDevTools();
   win.loadFile('src/index.html')
 
   ipcMain.on('close', () => {
@@ -27,8 +29,8 @@ const createWindow = () => {
 
 const getBrowserWindow = () => {
   return new BrowserWindow({
-    width: 500,
-    height: 210,
+    width: 600,
+    height: 300,
     frame: false,
     webPreferences: {
       contextIsolation: false,

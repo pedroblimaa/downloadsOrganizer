@@ -3,26 +3,34 @@ import src.consts as c
 import os
 
 
-def createFolders(files, path):
-    for folder in c.folders:
-        if not folder in files:
-            os.mkdir(path + "\\" + folder)
+def createFolders(files, path, folderNames):
+    for folderName in folderNames:
+        if not folderName in files:
+            os.mkdir(path + "\\" + folderName)
 
 
-def organize(files, path):
+def organize(files, path, folderNames):
 
     for file in files:
-        handleFileTransference(file, path)
+        handleFileTransference(file, path, folderNames)
 
         fileWasMoved = not (file in os.listdir(path))
-        if (not fileWasMoved) and (isNotCategoryFolder(file)):
-            moveToFolder(path, "other", file)
+        if (not fileWasMoved) and (isNotCategoryFolder(file, folderNames)):
+            moveToFolder(path, folderNames[-1], file)
 
 
-def handleFileTransference(file, path):
-    for folder in c.folders:
-        if file.endswith(c.foldersName[folder]):
-            moveToFolder(path, folder, file)
+def handleFileTransference(file, path, folderNames):
+    for folderName in folderNames:
+        if file.endswith(getExtensionsByFolders(folderNames, folderName)):
+            moveToFolder(path, folderName, file)
+
+
+def getExtensionsByFolders(folders, folder):
+    index = folders.index(folder)
+    extensionsList = [c.documents, c.media, c.compressed, c.installer, c.other]
+
+    return extensionsList[index]
+
 
 
 def moveToFolder(path, folder, file):
@@ -69,5 +77,5 @@ def isFolder(path, file):
     return os.path.isdir(path + "\\" + file)
 
 
-def isNotCategoryFolder(file):
-    return not(file in c.folders)
+def isNotCategoryFolder(file, folderNames):
+    return not (file in folderNames)

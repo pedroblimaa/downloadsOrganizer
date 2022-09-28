@@ -1,10 +1,10 @@
 import os
 import src.consts as c
 
-def undo(path):
+def undo(path, foldersNames):
     downloadItems = os.listdir(path)
     for item in downloadItems:
-        if item in c.folders:
+        if item in foldersNames:
             removeAllItemsFromFolder(path, item)
             os.rmdir(path + "\\" + item)
 
