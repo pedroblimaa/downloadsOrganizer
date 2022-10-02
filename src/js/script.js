@@ -3,7 +3,6 @@ const { PythonShell } = require('python-shell')
 document.getElementById('organize-btn').addEventListener('click', function () {
   const language = getLanguage()
   runPythonScriptWithArgs('organize', [language])
-  // Call script passing language as argument
 })
 
 document.getElementById('undo-btn').addEventListener('click', function () {

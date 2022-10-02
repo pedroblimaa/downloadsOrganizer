@@ -6,4 +6,4 @@ scriptsToPath = os.path.join(exePath, "script")
 
 os.system("yarn dist")
 os.system("cp -r '" + scriptsFromPath + "' '" + scriptsToPath + "'")
-os.system("node /build_installer.js")
+os.system("node build_installer.js")

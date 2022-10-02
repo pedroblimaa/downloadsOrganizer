@@ -14,7 +14,7 @@
   "scripts": {
     "start": "electron .",
     "watch": "nodemon --exec electron .",
-    "dist": "electron-builder"
+    "dist": "electron-builder "
   },
   "dependencies": {
     "@electron/remote": "^2.0.8",
@@ -26,6 +26,18 @@
     "appId": "com.downloads-organizer.app",
     "productName": "Downloads Organizer",
     "target": "NSIS",
+    "win" : {
+      "target": "nsis",
+      "icon": "./src/assets/icon.ico"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "./src/assets/icon.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "./src/assets/icon.ico"
+    },
     "nsis": {
       "oneClick": true,
       "installerLanguages": "en_US",

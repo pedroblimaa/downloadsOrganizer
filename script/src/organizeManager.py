@@ -32,7 +32,6 @@ def getExtensionsByFolders(folders, folder):
     return extensionsList[index]
 
 
-
 def moveToFolder(path, folder, file):
     duplicatedFileNumber = 0
 
