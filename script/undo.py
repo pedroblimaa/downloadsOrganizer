@@ -25,6 +25,5 @@ def getCurrentFoldersNames(path):
     return lm.getFoldersByLanguage(foldersLanguage)
 
 
-
 if __name__ == "__main__":
     main()
