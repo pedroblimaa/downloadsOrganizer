@@ -1,5 +1,8 @@
 node_modules
 package-lock.json
 dist
+out
+release-builds
 installer
 yarn-error.log
+yarn.lock

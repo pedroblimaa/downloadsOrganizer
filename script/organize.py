@@ -19,8 +19,8 @@ def main():
     home = expanduser("~")
     path = home + "\\Downloads"
 
-    if isOrganized(path):
-        raise Exception("Already organized, please undo first")
+    if isOrganizedWithDifferentLanguage(path, args[0]):
+        raise Exception("Already organized with a different language, please undo first")
 
     files = os.listdir(path)
     om.createFolders(files, path, folderNames)
@@ -33,8 +33,9 @@ def getFoldersNames(args):
     language = args[0]
     return lm.getFoldersByLanguage(language)
 
-def isOrganized(path):
-    return verify.verifyOrganizationLanguage(os.listdir(path))
+def isOrganizedWithDifferentLanguage(path, organizingLanguage):
+    organizationLanguage = verify.verifyOrganizationLanguage(os.listdir(path))
+    return organizationLanguage and organizationLanguage != organizingLanguage
 
 if __name__ == "__main__":
     main()

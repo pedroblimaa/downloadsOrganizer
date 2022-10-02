@@ -24,7 +24,10 @@ function runPythonScriptWithArgs(scriptName, args) {
 }
 
 function handleScriptReturn(scriptName, err) {
-  if (err) {
+  if (err && err.message.includes('Python')) {
+    alert('Python is required to run this app, please install it using Microsoft Store')
+    throw err
+  } else if (err) {
     alert(err)
     throw err
   }

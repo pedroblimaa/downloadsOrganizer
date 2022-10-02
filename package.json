@@ -8,42 +8,19 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^19.0.9",
-    "electron-builder": "^23.3.3",
+    "electron-packager": "^16.0.0",
+    "electron-winstaller": "^5.0.0",
     "electron-wix-msi": "^4.0.0"
   },
   "scripts": {
     "start": "electron .",
     "watch": "nodemon --exec electron .",
-    "dist": "electron-builder "
+    "package": "electron-packager --icon=src/assets/icon.ico --overwrite . downloads-organizer --platform=win32 --arch=x64 --out=dist"
   },
   "dependencies": {
     "@electron/remote": "^2.0.8",
     "custom-electron-titlebar": "^4.1.0",
     "nodemon": "^2.0.19",
     "python-shell": "^3.0.1"
-  },
-  "build": {
-    "appId": "com.downloads-organizer.app",
-    "productName": "Downloads Organizer",
-    "target": "NSIS",
-    "win" : {
-      "target": "nsis",
-      "icon": "./src/assets/icon.ico"
-    },
-    "linux": {
-      "target": "AppImage",
-      "icon": "./src/assets/icon.ico"
-    },
-    "mac": {
-      "target": "dmg",
-      "icon": "./src/assets/icon.ico"
-    },
-    "nsis": {
-      "oneClick": true,
-      "installerLanguages": "en_US",
-      "displayLanguageSelector": true,
-      "multiLanguageInstaller": true,
-      "unicode": true
-    }
   }
 }
