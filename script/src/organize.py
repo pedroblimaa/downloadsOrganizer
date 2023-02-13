@@ -1,17 +1,15 @@
-import src.organizeManager as om
-import src.languageManager as lm
-import src.verify as verify
 import os
-import sys
 from os.path import expanduser
 
+import src.modules.languageManager as lm
+import src.modules.organizeManager as om
+import src.utils.verify as verify
 
-def main():
 
-    args = getArgs()
+def exec(args):
 
     if len(args) != 1:
-        raise Exception("Invalid number of arguments")
+        raise Exception("Invalid number of arguments, Usage: py downloads_organizer.py organize <language>... The language can be 'pt' or 'en")
 
     folderNames = getFoldersNames(args)
 
@@ -26,11 +24,6 @@ def main():
     om.createFolders(files, path, folderNames)
     om.organize(files, path, folderNames)
 
-
-def getArgs():
-    return sys.argv[1:]
-
-
 def getFoldersNames(args):
     language = args[0]
     return lm.getFoldersByLanguage(language)
@@ -39,7 +32,3 @@ def getFoldersNames(args):
 def isOrganizedWithDifferentLanguage(path, organizingLanguage):
     organizationLanguage = verify.verifyOrganizationLanguage(os.listdir(path))
     return organizationLanguage and organizationLanguage != organizingLanguage
-
-
-if __name__ == "__main__":
-    main()

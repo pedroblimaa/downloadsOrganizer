@@ -1,4 +1,4 @@
-import src.consts as c
+import src.utils.consts as c
 
 def getFoldersByLanguage(language):
     for folder in c.foldersLanguages:

@@ -16,7 +16,7 @@ You will only need node.js and python in order to run the project:
 `yarn dist`
 
 ### If you want to generate the installer run the following command:
-`py installer.py`
+`py create_installer.py`
 
 ## Use
 

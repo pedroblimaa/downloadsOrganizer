@@ -1,12 +1,12 @@
-import src.undoManager as um
-import src.verify as verify
-import src.consts as c
-import src.languageManager as lm
 import os
 from os.path import expanduser
 
+import src.modules.languageManager as lm
+import src.modules.undoManager as um
+import src.utils.verify as verify
 
-def main():
+
+def exec():
 
     home = expanduser("~")
     path = home + "\\Downloads"
@@ -23,7 +23,3 @@ def getCurrentFoldersNames(path):
     foldersLanguage = verify.verifyOrganizationLanguage(os.listdir(path))
 
     return lm.getFoldersByLanguage(foldersLanguage)
-
-
-if __name__ == "__main__":
-    main()

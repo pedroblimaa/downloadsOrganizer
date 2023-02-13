@@ -1,5 +1,5 @@
 from fileinput import filename
-import src.consts as c
+import src.utils.consts as c
 import os
 
 

@@ -1,5 +1,5 @@
 import os
-import src.consts as c
+import src.utils.consts as c
 
 def undo(path, foldersNames):
     downloadItems = os.listdir(path)

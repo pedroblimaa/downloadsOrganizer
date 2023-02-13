@@ -1,6 +1,6 @@
 from os.path import expanduser
 import os
-import src.consts as c
+import src.utils.consts as c
 
 def verifyOrganizationLanguage(fileNames):
     language = ''
