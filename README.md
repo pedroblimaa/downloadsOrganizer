@@ -34,7 +34,7 @@ npm install
 
 ## <a id="generating-installer">Generating Installer</a>
 
-#### If you don't want to generate an installer, you can jump for the `Usage` section
+> Note: If you don't want to generate an installer, you can jump for the `Usage` section
 
 If you want to generate the win app run the foollowing command:
 `npm run dist` or `yarn dist` for yarn
