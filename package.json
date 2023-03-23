@@ -8,6 +8,8 @@
   "license": "MIT",
   "devDependencies": {
     "electron": "^19.0.9",
+    "electron-builder": "^23.6.0",
+    "electron-installer-windows": "^3.0.0",
     "electron-packager": "^16.0.0",
     "electron-winstaller": "^5.0.0",
     "electron-wix-msi": "^4.0.0"
@@ -15,7 +17,19 @@
   "scripts": {
     "start": "electron .",
     "watch": "nodemon --exec electron .",
-    "package": "electron-packager --icon=src/assets/icon.ico --overwrite . downloads-organizer --platform=win32 --arch=x64 --out=dist"
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "com.downloads-organizer",
+    "productName": "Downloads Organizer",
+    "directories": {
+      "output": "dist/installers"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "src/assets/icon.ico"
+    },
+    "afterPack": "./copy-python-script.js"
   },
   "dependencies": {
     "@electron/remote": "^2.0.8",
