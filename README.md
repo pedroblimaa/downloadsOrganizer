@@ -2,7 +2,13 @@
 
 Downloads Organizer is an application that helps you keep your downloads folder organized, saving you time and effort. If you have a messy downloads folder and don't want to organize it manually every time, this app is for you.
 
-## Installation
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Generating Installer](#generating-installer)
+- [Usage](#usage)
+
+## <a id="installation">Installation</a>
 
 You will only need node.js and python in order to run the project:
 - https://nodejs.org/en/download/
@@ -26,7 +32,7 @@ cd downloadsOrganizer
 npm install
 ```
 
-## Generating Installer
+## <a id="generating-installer">Generating Installer</a>
 
 #### If you don't want to generate an installer, you can jump for the `Usage` section
 
@@ -36,7 +42,7 @@ If you want to generate the win app run the foollowing command:
 If you want to generate the installer run the following command:
 `npm run build`
 
-## Usage
+## <a id="usage">Usage</a>
 
 After installation, you can start the app by running `npm run start` or `yarn start` or opening the generated executable application.
 
