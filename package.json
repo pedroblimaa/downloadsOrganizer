@@ -1,7 +1,7 @@
 {
   "name": "downloads-organizer",
   "productName": "Downloads Organizer",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Organize downloads folder",
   "main": "main.js",
   "author": "Pedro Bonfilio",

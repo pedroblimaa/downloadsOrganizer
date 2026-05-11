@@ -20,7 +20,7 @@ To build the Windows installer, you also need Python and PyInstaller because the
 py -m pip install pyinstaller
 ```
 
-> Note: If you only want to use the app and do not wish to check the repository or contribute to development, you can simply extract the `Downloads Organizer Setup 0.1.0.rar` zip file and run the installer.
+> Note: If you only want to use the app and do not wish to check the repository or contribute to development, download the installer from the latest GitHub release and run it.
 
 1. Clone the project repository:
 
