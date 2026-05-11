@@ -1,4 +1,7 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
+const path = require('path')
+
+const appIcon = path.join(__dirname, 'src/assets/app-icon.png')
 
 const createWindow = () => {
   const win = getBrowserWindow()
@@ -32,6 +35,7 @@ const getBrowserWindow = () => {
     width: 600,
     height: 300,
     frame: false,
+    icon: appIcon,
     webPreferences: {
       contextIsolation: false,
       nodeIntegration: true,
