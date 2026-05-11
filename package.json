@@ -36,5 +36,10 @@
     "custom-electron-titlebar": "^4.1.0",
     "nodemon": "^2.0.19",
     "python-shell": "^3.0.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "electron"
+    ]
   }
 }
