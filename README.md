@@ -2,6 +2,10 @@
 
 Downloads Organizer is an application that helps you keep your downloads folder organized, saving you time and effort. If you have a messy downloads folder and don't want to organize it manually every time, this app is for you.
 
+<p align="center">
+  <img src="src/assets/app-preview.png" alt="Downloads Organizer app screenshot" width="720">
+</p>
+
 ## Table of Contents
 
 - [Introduction](#introduction)
