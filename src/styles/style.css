@@ -9,6 +9,8 @@
   --accent-strong: #3f7699;
   --accent-dark: #25313d;
   --border: rgba(255, 255, 255, 0.08);
+  --success: #72b98f;
+  --error: #d47777;
 }
 
 * {
@@ -175,5 +177,56 @@ body {
 
 .active {
   color: #c2ccd6;
+}
+
+.notification {
+  position: absolute;
+  left: 24px;
+  right: 24px;
+  bottom: 22px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-height: 48px;
+  padding: 13px 15px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  background: rgba(27, 31, 36, 0.96);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(12px);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.notification.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.notification-icon {
+  flex: 0 0 auto;
+  width: 10px;
+  height: 10px;
+  margin-top: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.notification-success .notification-icon {
+  background: var(--success);
+}
+
+.notification-error .notification-icon {
+  background: var(--error);
+}
+
+.notification-message {
+  max-height: 78px;
+  overflow: auto;
+  color: #dce4ec;
+  font-size: 13px;
+  line-height: 1.4;
 }
 

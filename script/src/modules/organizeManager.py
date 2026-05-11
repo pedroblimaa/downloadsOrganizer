@@ -1,6 +1,5 @@
-from fileinput import filename
-import src.utils.consts as c
 import os
+import src.utils.consts as c
 
 
 def createFolders(files, path, folderNames):

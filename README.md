@@ -10,9 +10,15 @@ Downloads Organizer is an application that helps you keep your downloads folder 
 
 ## <a id="installation">Installation</a>
 
-You will only need node.js and python in order to run the project:
+You will need Node.js to run the Electron project:
 - https://nodejs.org/en/download/
+
+To build the Windows installer, you also need Python and PyInstaller because the Python organizer is bundled as an executable during packaging:
 - https://www.python.org/
+
+```bash
+py -m pip install pyinstaller
+```
 
 > Note: If you only want to use the app and do not wish to check the repository or contribute to development, you can simply extract the `Downloads Organizer Setup 0.1.0.rar` zip file and run the installer.
 
@@ -29,22 +35,21 @@ cd downloadsOrganizer
 
 3. Install the required dependencies:
 ```bash
-npm install
+pnpm install
 ```
 
 ## <a id="generating-installer">Generating Installer</a>
 
 > Note: If you don't want to generate an installer, you can jump for the `Usage` section
 
-If you want to generate the win app run the foollowing command:
-`npm run dist` or `yarn dist` for yarn
+If you want to generate the Windows installer, run the following command:
+`pnpm build`
 
-If you want to generate the installer run the following command:
-`npm run build`
+The generated installer includes the compiled organizer executable, so users who install the app do not need to install Python separately.
 
 ## <a id="usage">Usage</a>
 
-After installation, you can start the app by running `npm run start` or `yarn start` or opening the generated executable application.
+After installation, you can start the app by running `pnpm start` or opening the generated executable application.
 
 To organize your downloads folder, simply click the Organize button. To undo the organization, click the Undo button.
 

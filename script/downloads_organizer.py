@@ -24,4 +24,8 @@ def getArgs():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as err:
+        print(err, file=sys.stderr)
+        sys.exit(1)
